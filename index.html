@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Les Petits Plats</title>
+    <meta name="description" content="Site de recettes de cuisine" />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/65c05be77e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="banner">
+        <a
+          href="./index.html"
+          aria-label="lien vers page d'accueil les petits plats "
+        >
+          <div class="banner__logo">
+            <img
+              src="./public/img/logoLesPetitsPlats.png"
+              alt="Les Petits Plats Homepage"
+            />
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <!-- Barre de navigation -->
+
+    <div class="navbarSearch">
+      <input
+        class="navbarSearch__txt"
+        type="text"
+        id="search"
+        name="search"
+        placeholder="Rechercher un ingrédient, un appareil, un ustensile ou une recette"
+        aria-label="Saisir ici ce que vous recherchez"
+        tabindex="2"
+      />
+      <!-- Icone de recherche principale -->
+      <div
+        class="navbarSearch__btn"
+        id="btnSearch"
+        aria-label="Cliquer pour lancer la recherche"
+        tabindex="2"
+      >
+        <span class="fa fa-search"></span>
+      </div>
+    </div>
+
+    <div class="navbarSelect">
+      <div class="btnSelectBlue"><a href="#">Lien 1</a></div>
+      <div class="btnSelectGreen"><a href="#">Lien 1</a></div>
+      <div class="btnSelectRed"><a href="#">Lien 1</a></div>
+    </div>
+
+    <!-- Grille Flexible -->
+    <main id="recettes">
+      <!-- <div class="recettes"></div> -->
+    </main>
+
+    <!-- Footer -->
+    <div class="footer">
+      <h2>Pied de page</h2>
+    </div>
+
+    <!-- <script src="./js/index.js"></script> -->
+    <!-- <script src="./js/index.js" type="module"></script> -->
+    <script src="./js/recipes.js"></script>
+  </body>
+</html>

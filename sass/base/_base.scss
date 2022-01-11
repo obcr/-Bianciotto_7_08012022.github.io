@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+}
+/* On applique la regle border-box à tous les elements */
+* {
+  box-sizing: border-box;
+}
+/* On enleve les marges par defaut et on definit la police du texte */
+body {
+  margin: auto;
+  padding: 0px 25px 0px 25px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1290px;
+  max-height: 1024px;
+}

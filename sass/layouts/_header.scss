@@ -1,0 +1,35 @@
+/* Header/logo Titre */
+// .logo {
+//   padding: 60px;
+//   text-align: center;
+//   background: #1abc9c;
+//   color: white;
+// }
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__logo {
+    margin-top: 3rem;
+    height: 7.1rem;
+    width: 15.5rem;
+
+    & img {
+      width: 100%;
+      object-position: 50% 50%;
+      object-fit: fill;
+    }
+  }
+
+  // &__title {
+  //     font-style: normal;
+  //     font-weight: 700;
+  //     font-size: 3.6rem;
+  //     line-height: 4.7rem;
+  //     padding-bottom: 1.7rem;
+  //     color: $color-header;
+  // }
+}

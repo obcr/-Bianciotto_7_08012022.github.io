@@ -1,0 +1,156 @@
+@charset "UTF-8";
+/* Media Queries */
+@media screen and (max-width: 700px) {
+  .conteneur,
+  .navbarSearch,
+  .navbarSelect {
+    flex-direction: column; } }
+a {
+  text-decoration: none; }
+
+/* On applique la regle border-box à tous les elements */
+* {
+  box-sizing: border-box; }
+
+/* On enleve les marges par defaut et on definit la police du texte */
+body {
+  margin: auto;
+  padding: 0px 25px 0px 25px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1290px;
+  max-height: 1024px; }
+
+/* Header/logo Titre */
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .banner__logo {
+    margin-top: 3rem;
+    height: 7.1rem;
+    width: 15.5rem; }
+    .banner__logo img {
+      width: 100%;
+      object-position: 50% 50%;
+      object-fit: fill; }
+
+.navbarSearch {
+  height: 69px;
+  border-radius: 0.5rem;
+  background-color: #e7e7e7;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+  .navbarSearch > input {
+    border-color: transparent;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    padding: 2.3rem;
+    color: black;
+    font-size: 1.1rem; }
+  .navbarSearch__btn {
+    height: 69px;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.9rem; }
+    .navbarSearch__btn > span {
+      font-size: 2.2rem;
+      font-weight: 700; }
+    .navbarSearch__btn:hover {
+      border-radius: 0 0.5rem 0.5rem 0;
+      background-color: #c7bebe; }
+
+/* on met en forme la barre de navigation */
+.navbarSelect {
+  display: flex; }
+
+/* on met un style aux liens de navigation */
+.btnSelectBlue {
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  float: left;
+  color: white;
+  background-color: #3282f7;
+  width: 170px;
+  height: 69px;
+  padding: 14px 20px;
+  /* on change la couleur des liens de navigation au passage de la souris */ }
+  .btnSelectBluea {
+    text-decoration: none;
+    text-align: center; }
+  .btnSelectBluea:hover {
+    background-color: #ddd;
+    color: black; }
+
+/* on met un style aux liens de navigation */
+.btnSelectGreen {
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  float: left;
+  color: white;
+  background-color: #68d9a4;
+  width: 170px;
+  height: 69px;
+  padding: 14px 20px;
+  /* on change la couleur des liens de navigation au passage de la souris */ }
+  .btnSelectGreena {
+    text-decoration: none;
+    text-align: center; }
+  .btnSelectGreena:hover {
+    background-color: #ddd;
+    color: black; }
+
+/* on met un style aux liens de navigation */
+.btnSelectRed {
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  float: left;
+  color: white;
+  background-color: #d04f4f;
+  width: 170px;
+  height: 69px;
+  padding: 14px 20px;
+  /* on change la couleur des liens de navigation au passage de la souris */ }
+  .btnSelectReda {
+    text-decoration: none;
+    text-align: center; }
+  .btnSelectReda:hover {
+    background-color: #ddd;
+    color: black; }
+
+/* on cree un conteneur flexible qui contiendra des colonnes */
+#recettes {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 5rem; }
+
+.recipe {
+  background-color: #c7bebe;
+  width: 100%;
+  height: 300px;
+  max-height: 36.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  overflow: hidden; }
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd; }
+
+/* on cree un conteneur flexible qui contiendra des colonnes */
+
+/*# sourceMappingURL=style.css.map */
