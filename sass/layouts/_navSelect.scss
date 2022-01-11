@@ -1,0 +1,86 @@
+/* on met en forme la barre de navigation */
+#navbarSelect {
+  display: flex;
+}
+
+.ingredient,
+.appareil,
+.ustensile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn__Blue,
+.btn__Green,
+.btn__Red {
+  width: 100%;
+}
+
+// /* on met un style aux liens de navigation */
+// .btnSelectBlue {
+//   border-radius: 0.5rem;
+//   margin-right: 2rem;
+//   float: left;
+//   color: white;
+//   background-color: $colorBtnBlue;
+//   width: 170px;
+//   height: 69px;
+//   padding: 14px 20px;
+//   &a {
+//     text-decoration: none;
+//     text-align: center;
+//   }
+//   /* on change la couleur des liens de navigation au passage de la souris */
+//   &a:hover {
+//     background-color: #ddd;
+//     color: black;
+//   }
+// }
+
+// /* on met un style aux liens de navigation */
+// .btnSelectGreen {
+//   border-radius: 0.5rem;
+//   margin-right: 2rem;
+//   float: left;
+//   color: white;
+//   background-color: $colorBtnGreen;
+//   width: 170px;
+//   height: 69px;
+//   padding: 14px 20px;
+//   &a {
+//     text-decoration: none;
+//     text-align: center;
+//   }
+//   /* on change la couleur des liens de navigation au passage de la souris */
+//   &a:hover {
+//     background-color: #ddd;
+//     color: black;
+//   }
+// }
+
+// /* on met un style aux liens de navigation */
+// .btnSelectRed {
+//   border-radius: 0.5rem;
+//   margin-right: 2rem;
+//   float: left;
+//   color: white;
+//   background-color: $colorBtnRed;
+//   width: 170px;
+//   height: 69px;
+//   padding: 14px 20px;
+//   &a {
+//     text-decoration: none;
+//     text-align: center;
+//   }
+//   /* on change la couleur des liens de navigation au passage de la souris */
+//   &a:hover {
+//     background-color: #ddd;
+//     color: black;
+//   }
+// }
+
+// #ingredient {
+//   display: flex;
+//   flex-direction: row;
+// }

@@ -1,0 +1,47 @@
+.btnBlue {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  //   float: left;
+  color: white;
+  background-color: $colorBtnBlue;
+  width: 170px;
+  height: 69px;
+  padding: 14px 20px;
+  //   cursor: pointer;
+  //   transform: scale(1);
+  //   transition: transform 400ms;
+}
+
+.btnGreen {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  //   float: left;
+  color: white;
+  background-color: $colorBtnGreen;
+  width: 170px;
+  height: 69px;
+  padding: 14px 20px;
+  //   cursor: pointer;
+  //   transform: scale(1);
+  //   transition: transform 400ms;
+}
+
+.btnRed {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  //   float: left;
+  color: white;
+  background-color: $colorBtnRed;
+  width: 170px;
+  height: 69px;
+  padding: 14px 20px;
+  //   cursor: pointer;
+  //   transform: scale(1);
+  //   transition: transform 400ms;
+}
