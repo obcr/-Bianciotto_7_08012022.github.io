@@ -1,9 +1,39 @@
 /* Media Queries */
 
-@media screen and (max-width: 700px) {
-  .conteneur,
+@media screen and (max-width: 859px) {
+  #conteneur,
+  #navbarSelect,
+  .navbarSearch {
+    flex-direction: column;
+  }
+  .recipe {
+    margin: auto;
+    min-width: 100%;
+    // min-height: 364px;
+  }
+  .btnBlue,
+  .btnGreen,
+  .btnRed {
+    width: 100%;
+    margin-right: 0;
+  }
+  .recipe {
+    // margin: auto;
+    width: 300px;
+
+    // min-height: 364px;
+  }
+}
+
+@media screen and (min-width: 860px) and (max-width: 1289px) {
+  #conteneur,
   .navbarSearch,
   .navbarSelect {
     flex-direction: column;
+  }
+  .recipe {
+    margin: auto;
+    min-width: 100%;
+    // min-height: 364px;
   }
 }

@@ -1776,25 +1776,25 @@ const recipes = [
   },
 ];
 
-console.log(recipes);
+// console.log(recipes);
 
 // const objJsonString = JSON.stringify(recipes);
 // console.log(objJsonString);
 
-const recettes = document.getElementById("recettes");
-recettes.innerHTML = recipes
-  .map(
-    (recipe) =>
-      `
-<div class="recipe">
-  <h2>${recipe.id}</h2>
-  <h2>${recipe.name}</h2>
-  <h2>${recipe.servings}</h2>
-  <p>${recipe.ingredients}</p>
-</div>
-`
-  )
-  .join("");
+// const recettes = document.getElementById("recettes");
+// recettes.innerHTML = recipes
+//   .map(
+//     (recipe) =>
+//       `
+// <div class="recipe">
+//   <h2>${recipe.id}</h2>
+//   <h2>${recipe.name}</h2>
+//   <h2>${recipe.servings}</h2>
+//   <p>${recipe.ingredients}</p>
+// </div>
+// `
+//   )
+//   .join("");
 
 // let data = [
 //   {

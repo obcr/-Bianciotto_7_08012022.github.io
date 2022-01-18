@@ -1,39 +1,6 @@
-/* on cree un conteneur flexible qui contiendra des colonnes */
-#recettes {
-  margin-top: 1.5rem;
-  width: 100%;
-  display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-  grid-gap: 5rem;
-}
-
-.recipe {
-  background-color: $colorDarkGray;
-  width: 100%;
-  height: 300px;
-  max-height: 36.4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 0.5rem;
-  border: none;
-  font-weight: 700;
-  font-size: 1.2rem;
-  overflow: hidden;
-}
-
 /* Footer */
 .footer {
   padding: 20px;
   text-align: center;
   background: #ddd;
 }
-
-/* on cree un conteneur flexible qui contiendra des colonnes */
-// .conteneur {
-//   display: flex;
-//   flex-direction: row-reverse;
-//   flex-wrap: wrap;
-// }

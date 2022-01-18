@@ -1,5 +1,6 @@
 // research input & icon search button
 .navbarSearch {
+  margin: auto;
   height: 69px;
   border-radius: 0.5rem;
   background-color: $colorLightGray;
@@ -30,7 +31,7 @@
       font-size: 2.2rem;
       font-weight: 700;
     }
-    &:hover {
+    & :hover {
       border-radius: 0 0.5rem 0.5rem 0;
       background-color: $colorDarkGray;
     }

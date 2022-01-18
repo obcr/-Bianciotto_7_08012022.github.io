@@ -1,0 +1,221 @@
+/* on cree un conteneur flexible qui contiendra des colonnes */
+#recettes {
+  margin-top: 1.5rem;
+  // margin-right: auto;
+  // margin-left: auto;
+  width: 100%;
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+
+  grid-gap: 50px;
+}
+
+// #recettes {
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: row;
+//   justify-content: start;
+//   align-items: auto;
+//   align-content: start;
+// }
+.recipe {
+  display: flex;
+  justify-content: space-between;
+  background-color: $colorLightGray;
+  // width: 380px;
+  max-width: 380px;
+  height: 364px;
+  // padding: 20px;
+  flex-direction: column;
+  //   align-items: center;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.blocImageSupp {
+  background-color: $colorDarkGray;
+  & span {
+    display: flex;
+    width: 100%;
+    height: 178px;
+  }
+}
+
+.blocElementsHigh {
+  font-family: $lato-font;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 5px;
+  // white-space: nowrap;
+  & h2 {
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+.time {
+  display: flex;
+  align-items: center;
+  & i {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  & h2 {
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
+
+.blocElementsDown {
+  display: flex;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+#ingredientRecette {
+  display: flex;
+  width: 100%;
+  height: 109px;
+  flex-direction: column;
+  margin-right: 10px;
+  & ul {
+    margin: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    line-height: 14.4px;
+    letter-spacing: 0em;
+  }
+}
+
+.ingredientRecette {
+  display: flex;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  &__produits {
+    font-weight: 900;
+  }
+  &__quantity {
+    font-weight: 400;
+  }
+  &__unit {
+    font-weight: 400;
+  }
+}
+
+// .descriptionRecette {
+//   //   display: block;
+//   //   padding: 10px;
+//   //   margin: 0 auto;
+//   //   min-width: 171px;
+//   //   min-height: 109px;
+//   // overflow: hidden;
+//   display: flex;
+//   & p {
+//     white-space: nowrap;
+//     font-size: 12px;
+//     font-family: $roboto-font;
+//     font-weight: 400;
+//     margin-top: 0%;
+//     margin-left: 10px;
+//     display: block;
+//     width: 100%;
+//     // white-space: break-spaces;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     position: relative;
+//     /* Use this value to count block height */
+//     line-height: 12px;
+//     /* Max-height = line-height (1.2) * lines max number (2) */
+//     max-height: 84px;
+//     text-align: left;
+//     padding-right: 40px;
+//     padding-left: 1em;
+//     &::before {
+//       /* points in the end */
+//       content: "...";
+//       /* absolute position */
+//       position: absolute;
+//       /* set position to right bottom corner of block */
+//       right: 20px;
+//       bottom: 0;
+//     }
+//     &::after {
+//       /* points in the end */
+//       content: "";
+//       /* absolute position */
+//       position: absolute;
+//       /* set position to right bottom corner of text */
+//       right: 20px;
+//       /* set width and height */
+//       width: 1em;
+//       height: 1em;
+//       margin-top: 0.2em;
+//       /* bg color = bg color under block */
+//       background: white;
+//     }
+//   }
+// }
+
+.descriptionRecette {
+  font-family: $roboto-font;
+  font-weight: 400;
+  & p {
+    width: 160px;
+    margin-top: 0%;
+    font-size: 12px;
+    /* Over flow hidden hides the text if it is more than N lines  */
+    overflow: hidden;
+    /* To set '...' in absolute position */
+    position: relative;
+    /* Use this value to count block height */
+    line-height: 12px;
+    /* Max-height = line-height (12) * lines max number (7) */
+    max-height: 84px;
+    /* If the last visible word doesn't adjoin right side then this will fix the problem */
+    text-align: left !important;
+    &::after {
+      content: "...";
+    }
+  }
+}
+
+// display: block; /* Fallback for non-webkit */
+// display: -webkit-box;
+// max-width: 400px;
+// height: $font-size * $line-height * $lines-to-show; /* Fallback for non-webkit */
+// margin: 0 auto;
+// font-size: $font-size;
+// line-height: $line-height;
+// -webkit-line-clamp: $lines-to-show;
+// -webkit-box-orient: vertical;
+// overflow: hidden;
+// text-overflow: ellipsis;
+
+// .descriptionRecette {
+//   font-family: $roboto-font;
+//   font-weight: 400;
+//   & p {
+//     position: relative;
+//     line-height: 12px;
+//     display: block; /* Fallback for non-webkit */
+//     max-width: 170px;
+//     height: 12 * 12; /* Fallback for non-webkit */
+//     margin: 0 auto;
+//     font-size: 12px;
+//     line-clamp: 7;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     text-align: left;
+//   }
+// }
