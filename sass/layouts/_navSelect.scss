@@ -1,67 +1,176 @@
 /* on met en forme la barre de navigation */
-.navbarSelect {
+#navbarSelect {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ingredient,
+.appareil,
+.ustensile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .ingredient__name,
+  .appareil__name,
+  .ustensile__name {
+    font-family: "Lato";
+    font-weight: 600;
+    font-size: 0.85em;
+  }
+}
+
+.btn__Blue,
+.btn__Green,
+.btn__Red {
+  width: 100%;
+}
+
+// /* on met un style aux liens de navigation */
+
+.btnBlueOpen {
+  display: none;
+  // position: absolute;
+  z-index: 999;
+  background: $colorBtnBlue;
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 0.75em;
+  transition: all 1s;
+  padding: 1em;
+  padding-top: 1.3em;
+  color: white;
+  // margin-top: 1.5em;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  cursor: initial;
+  .selectSearch__ingredients {
+    border-color: transparent;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    &::placeholder {
+      color: rgb(255, 255, 255);
+      font-size: 1.1rem;
+    }
+  }
+  .item-group-ingredients {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 106px;
+    break-inside: avoid;
+    list-style: none;
+    overflow: scroll;
+    padding: 0;
+    li {
+      padding: 2px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.btnGreenOpen {
+  display: none;
+  z-index: 999;
+  // position: absolute;
+  background: $colorBtnGreen;
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 0.75em;
+  transition: all 1s;
+  padding: 1em;
+  padding-top: 1.3em;
+  color: white;
+  // margin-top: 1.5em;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  cursor: initial;
+  .selectSearch__appareils {
+    border-color: transparent;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    &::placeholder {
+      color: rgb(255, 255, 255);
+      font-size: 1.1rem;
+    }
+  }
+  .item-group-appareils {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 106px;
+    break-inside: avoid;
+    list-style: none;
+    overflow: scroll;
+    padding: 0;
+    li {
+      padding: 2px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.btnRedOpen {
+  display: none;
+  // position: absolute;
+  z-index: 999;
+  background: $colorBtnRed;
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 0.75em;
+  transition: all 1s;
+  padding: 1em;
+  padding-top: 1.3em;
+  color: white;
+  // margin-top: 1.5em;
+  // margin-right: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  cursor: initial;
+  .selectSearch__ustensils {
+    border-color: transparent;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    &::placeholder {
+      color: rgb(255, 255, 255);
+      font-size: 1.1rem;
+    }
+  }
+  .item-group-ustensils {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 106px;
+    break-inside: avoid;
+    list-style: none;
+    overflow: scroll;
+    padding: 0;
+    li {
+      padding: 2px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.flexInputInconUp {
   display: flex;
 }
 
-/* on met un style aux liens de navigation */
-.btnSelectBlue {
-  border-radius: 0.5rem;
-  margin-right: 2rem;
-  float: left;
-  color: white;
-  background-color: $colorBtnBlue;
-  width: 170px;
-  height: 69px;
-  padding: 14px 20px;
-  &a {
-    text-decoration: none;
-    text-align: center;
-  }
-  /* on change la couleur des liens de navigation au passage de la souris */
-  &a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+#iconDow,
+#iconUp {
+  cursor: pointer;
+  font-size: larger;
 }
 
-/* on met un style aux liens de navigation */
-.btnSelectGreen {
-  border-radius: 0.5rem;
-  margin-right: 2rem;
-  float: left;
-  color: white;
-  background-color: $colorBtnGreen;
-  width: 170px;
-  height: 69px;
-  padding: 14px 20px;
-  &a {
-    text-decoration: none;
-    text-align: center;
-  }
-  /* on change la couleur des liens de navigation au passage de la souris */
-  &a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+.item-group-ingredients-item {
+  cursor: pointer;
 }
 
-/* on met un style aux liens de navigation */
-.btnSelectRed {
-  border-radius: 0.5rem;
-  margin-right: 2rem;
-  float: left;
-  color: white;
-  background-color: $colorBtnRed;
-  width: 170px;
-  height: 69px;
-  padding: 14px 20px;
-  &a {
-    text-decoration: none;
-    text-align: center;
-  }
-  /* on change la couleur des liens de navigation au passage de la souris */
-  &a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+.item-group-appareils-item {
+  cursor: pointer;
+}
+
+.item-group-ustensils-item {
+  cursor: pointer;
 }

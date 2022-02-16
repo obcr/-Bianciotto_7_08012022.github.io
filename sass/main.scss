@@ -4,9 +4,16 @@
 @import "./utils/_animations";
 @import "./base/base";
 @import "./base/typography";
+@import "./components/button";
+@import "./components/iconUpDown";
+@import "./components/tags";
 @import "./layouts/header";
-@import "./layouts/main";
+@import "./layouts/navTags";
 @import "./layouts/footer";
 @import "./layouts/navSearch";
 @import "./layouts/navSelect";
+@import "./layouts/recette";
 @import "./pages/index";
+
+
+

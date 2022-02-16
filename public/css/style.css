@@ -1,10 +1,35 @@
 @charset "UTF-8";
+/* Fonts */
+/* Fonts */
 /* Media Queries */
-@media screen and (max-width: 700px) {
-  .conteneur,
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@media screen and (max-width: 859px) {
+  #conteneur,
+  #navbarSelect,
+  .navbarSearch {
+    flex-direction: column; }
+
+  .recipe {
+    margin: auto;
+    min-width: 100%; }
+
+  .btnBlue,
+  .btnGreen,
+  .btnRed {
+    width: 100%;
+    margin-right: 0; }
+
+  .recipe {
+    width: 300px; } }
+@media screen and (min-width: 860px) and (max-width: 1289px) {
+  #conteneur,
   .navbarSearch,
   .navbarSelect {
-    flex-direction: column; } }
+    flex-direction: column; }
+
+  .recipe {
+    margin: auto;
+    min-width: 100%; } }
 a {
   text-decoration: none; }
 
@@ -21,6 +46,93 @@ body {
   max-width: 1290px;
   max-height: 1024px; }
 
+.btnBlue {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  background-color: #3282f7;
+  min-width: 170px;
+  height: 69px;
+  padding: 14px 20px;
+  transform: scale(1);
+  transition: transform 400ms; }
+
+.btnGreen {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  background-color: #68d9a4;
+  min-width: 170px;
+  height: 69px;
+  padding: 14px 20px;
+  transform: scale(1);
+  transition: transform 400ms; }
+
+.btnRed {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  background-color: #d04f4f;
+  min-width: 170px;
+  height: 69px;
+  padding: 14px 20px;
+  transform: scale(1);
+  transition: transform 400ms; }
+
+.tagsIngredient {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  background-color: #3282f7;
+  height: 39px;
+  padding: 14px 20px;
+  transform: scale(1);
+  transition: transform 400ms; }
+  .tagsIngredient i {
+    margin-left: 1rem; }
+
+.tagsAppareils {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  background-color: #68d9a4;
+  height: 39px;
+  padding: 14px 20px;
+  transform: scale(1);
+  transition: transform 400ms; }
+  .tagsAppareils i {
+    margin-left: 1rem; }
+
+.tagsUstensils {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  background-color: #d04f4f;
+  height: 39px;
+  padding: 14px 20px;
+  transform: scale(1);
+  transition: transform 400ms; }
+  .tagsUstensils i {
+    margin-left: 1rem; }
+
 /* Header/logo Titre */
 .banner {
   display: flex;
@@ -36,7 +148,16 @@ body {
       object-position: 50% 50%;
       object-fit: fill; }
 
+#tags {
+  display: flex;
+  margin: auto;
+  width: 100%; }
+
+.tags > span {
+  height: 65px; }
+
 .navbarSearch {
+  margin: auto;
   height: 69px;
   border-radius: 0.5rem;
   background-color: #e7e7e7;
@@ -61,96 +182,277 @@ body {
     .navbarSearch__btn > span {
       font-size: 2.2rem;
       font-weight: 700; }
-    .navbarSearch__btn:hover {
+    .navbarSearch__btn :hover {
       border-radius: 0 0.5rem 0.5rem 0;
       background-color: #c7bebe; }
 
 /* on met en forme la barre de navigation */
-.navbarSelect {
+#navbarSelect {
+  display: flex;
+  flex-wrap: wrap; }
+
+.ingredient,
+.appareil,
+.ustensile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .ingredient .ingredient__name,
+  .ingredient .appareil__name,
+  .ingredient .ustensile__name,
+  .appareil .ingredient__name,
+  .appareil .appareil__name,
+  .appareil .ustensile__name,
+  .ustensile .ingredient__name,
+  .ustensile .appareil__name,
+  .ustensile .ustensile__name {
+    font-family: "Lato";
+    font-weight: 600;
+    font-size: 0.85em; }
+
+.btn__Blue,
+.btn__Green,
+.btn__Red {
+  width: 100%; }
+
+.btnBlueOpen {
+  display: none;
+  z-index: 999;
+  background: #3282f7;
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 0.75em;
+  transition: all 1s;
+  padding: 1em;
+  padding-top: 1.3em;
+  color: white;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  cursor: initial; }
+  .btnBlueOpen .selectSearch__ingredients {
+    border-color: transparent;
+    background-color: transparent;
+    outline: none;
+    width: 100%; }
+    .btnBlueOpen .selectSearch__ingredients::placeholder {
+      color: white;
+      font-size: 1.1rem; }
+  .btnBlueOpen .item-group-ingredients {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 106px;
+    break-inside: avoid;
+    list-style: none;
+    overflow: scroll;
+    padding: 0; }
+    .btnBlueOpen .item-group-ingredients li {
+      padding: 2px;
+      margin-right: 10px; }
+
+.btnGreenOpen {
+  display: none;
+  z-index: 999;
+  background: #68d9a4;
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 0.75em;
+  transition: all 1s;
+  padding: 1em;
+  padding-top: 1.3em;
+  color: white;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  cursor: initial; }
+  .btnGreenOpen .selectSearch__appareils {
+    border-color: transparent;
+    background-color: transparent;
+    outline: none;
+    width: 100%; }
+    .btnGreenOpen .selectSearch__appareils::placeholder {
+      color: white;
+      font-size: 1.1rem; }
+  .btnGreenOpen .item-group-appareils {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 106px;
+    break-inside: avoid;
+    list-style: none;
+    overflow: scroll;
+    padding: 0; }
+    .btnGreenOpen .item-group-appareils li {
+      padding: 2px;
+      margin-right: 10px; }
+
+.btnRedOpen {
+  display: none;
+  z-index: 999;
+  background: #d04f4f;
+  font-family: "Lato";
+  font-weight: 600;
+  font-size: 0.75em;
+  transition: all 1s;
+  padding: 1em;
+  padding-top: 1.3em;
+  color: white;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  cursor: initial; }
+  .btnRedOpen .selectSearch__ustensils {
+    border-color: transparent;
+    background-color: transparent;
+    outline: none;
+    width: 100%; }
+    .btnRedOpen .selectSearch__ustensils::placeholder {
+      color: white;
+      font-size: 1.1rem; }
+  .btnRedOpen .item-group-ustensils {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 106px;
+    break-inside: avoid;
+    list-style: none;
+    overflow: scroll;
+    padding: 0; }
+    .btnRedOpen .item-group-ustensils li {
+      padding: 2px;
+      margin-right: 10px; }
+
+.flexInputInconUp {
   display: flex; }
 
-/* on met un style aux liens de navigation */
-.btnSelectBlue {
-  border-radius: 0.5rem;
-  margin-right: 2rem;
-  float: left;
-  color: white;
-  background-color: #3282f7;
-  width: 170px;
-  height: 69px;
-  padding: 14px 20px;
-  /* on change la couleur des liens de navigation au passage de la souris */ }
-  .btnSelectBluea {
-    text-decoration: none;
-    text-align: center; }
-  .btnSelectBluea:hover {
-    background-color: #ddd;
-    color: black; }
+#iconDow,
+#iconUp {
+  cursor: pointer;
+  font-size: larger; }
 
-/* on met un style aux liens de navigation */
-.btnSelectGreen {
-  border-radius: 0.5rem;
-  margin-right: 2rem;
-  float: left;
-  color: white;
-  background-color: #68d9a4;
-  width: 170px;
-  height: 69px;
-  padding: 14px 20px;
-  /* on change la couleur des liens de navigation au passage de la souris */ }
-  .btnSelectGreena {
-    text-decoration: none;
-    text-align: center; }
-  .btnSelectGreena:hover {
-    background-color: #ddd;
-    color: black; }
+.item-group-ingredients-item {
+  cursor: pointer; }
 
-/* on met un style aux liens de navigation */
-.btnSelectRed {
-  border-radius: 0.5rem;
-  margin-right: 2rem;
-  float: left;
-  color: white;
-  background-color: #d04f4f;
-  width: 170px;
-  height: 69px;
-  padding: 14px 20px;
-  /* on change la couleur des liens de navigation au passage de la souris */ }
-  .btnSelectReda {
-    text-decoration: none;
-    text-align: center; }
-  .btnSelectReda:hover {
-    background-color: #ddd;
-    color: black; }
+.item-group-appareils-item {
+  cursor: pointer; }
+
+.item-group-ustensils-item {
+  cursor: pointer; }
 
 /* on cree un conteneur flexible qui contiendra des colonnes */
 #recettes {
   margin-top: 1.5rem;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 5rem; }
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-gap: 50px; }
 
 .recipe {
-  background-color: #c7bebe;
-  width: 100%;
-  height: 300px;
-  max-height: 36.4rem;
   display: flex;
+  justify-content: space-between;
+  background-color: #e7e7e7;
+  max-width: 380px;
+  height: 364px;
   flex-direction: column;
-  align-items: center;
   border-radius: 0.5rem;
   border: none;
   font-weight: 700;
   font-size: 1.2rem;
   overflow: hidden; }
 
+.blocImageSupp {
+  background-color: #c7bebe; }
+  .blocImageSupp span {
+    display: flex;
+    width: 100%;
+    height: 178px; }
+
+.blocElementsHigh {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 5px; }
+  .blocElementsHigh h2 {
+    font-weight: 400;
+    font-size: 18px; }
+
+.time {
+  display: flex;
+  align-items: center; }
+  .time i {
+    font-size: 20px;
+    margin-right: 5px; }
+  .time h2 {
+    font-weight: 700;
+    font-size: 18px; }
+
+.blocElementsDown {
+  display: flex;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px; }
+
+#ingredientRecette {
+  display: flex;
+  width: 100%;
+  height: 109px;
+  flex-direction: column;
+  margin-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  #ingredientRecette ul {
+    margin: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    line-height: 14.4px;
+    letter-spacing: 0em; }
+  #ingredientRecette li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
+.ingredientRecette {
+  display: flex;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden; }
+  .ingredientRecette__produits {
+    font-weight: 900; }
+  .ingredientRecette__quantity {
+    font-weight: 400; }
+  .ingredientRecette__unit {
+    font-weight: 400; }
+
+.descriptionRecette {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; }
+  .descriptionRecette p {
+    width: 160px;
+    margin-top: 0%;
+    font-size: 12px;
+    /* Over flow hidden hides the text if it is more than N lines  */
+    overflow: hidden;
+    /* To set '...' in absolute position */
+    position: relative;
+    /* Use this value to count block height */
+    line-height: 12px;
+    /* Max-height = line-height (12) * lines max number (7) */
+    max-height: 84px;
+    /* If the last visible word doesn't adjoin right side then this will fix the problem */
+    text-align: left !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    display: -webkit-box; }
+
 /* Footer */
 .footer {
   padding: 20px;
   text-align: center;
   background: #ddd; }
-
-/* on cree un conteneur flexible qui contiendra des colonnes */
 
 /*# sourceMappingURL=style.css.map */

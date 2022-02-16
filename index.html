@@ -36,12 +36,13 @@
       <input
         class="navbarSearch__txt"
         type="text"
-        id="search"
+        id="searchNavBar"
         name="search"
         placeholder="Rechercher un ingrédient, un appareil, un ustensile ou une recette"
         aria-label="Saisir ici ce que vous recherchez"
         tabindex="2"
       />
+      <div id="txtSuggestion"></div>
       <!-- Icone de recherche principale -->
       <div
         class="navbarSearch__btn"
@@ -53,11 +54,106 @@
       </div>
     </div>
 
-    <div class="navbarSelect">
-      <div class="btnSelectBlue"><a href="#">Lien 1</a></div>
-      <div class="btnSelectGreen"><a href="#">Lien 1</a></div>
-      <div class="btnSelectRed"><a href="#">Lien 1</a></div>
+    <!--  Section Tags. display none par défaut -->
+    <div
+      id="tags"
+      class="tags"
+      aria-label="Affiche les tags sélectionnés et permet de les supprimer"
+      tabindex="1"
+    >
+      <!-- <div id="tagsIngredient"></div>
+      <div id="tagsAppareil"></div>
+      <div id="tagsUstensile"></div> -->
     </div>
+
+    <nav id="navbarSelect">
+      <div class="btnBlue">
+        <div class="btn__Blue">
+          <div class="ingredient">
+            <div class="ingredient__name">Ingrédients</div>
+            <div class="ingredient__iconDown">
+              <div id="iconDown" class="iconDown fa fa-chevron-down"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btnBlueOpen">
+        <div class="flexInputInconUp">
+          <input
+            class="selectSearch__ingredients"
+            type="text"
+            id="searchIngredients"
+            name="search"
+            placeholder="Rechercher un ingrédient"
+            aria-label="Saisir ici un ingredient"
+            tabindex="2"
+          />
+          <div class="ingredient__iconUp">
+            <div id="iconUp" class="iconUp fa fa-chevron-up"></div>
+          </div>
+        </div>
+        <ul class="item-group-ingredients"></ul>
+      </div>
+
+      <div class="btnGreen">
+        <div class="btn__Green">
+          <div class="appareil">
+            <div class="appareil__name">Appareils</div>
+            <div class="appareil__iconDown">
+              <div id="iconDown" class="iconDown fa fa-chevron-down"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btnGreenOpen">
+        <div class="flexInputInconUp">
+          <input
+            class="selectSearch__appareils"
+            type="text"
+            id="searchAppareils"
+            name="search"
+            placeholder="Rechercher un appareils"
+            aria-label="Saisir ici un appareils"
+            tabindex="2"
+          />
+          <div class="appareil__iconUp">
+            <div id="iconUp" class="iconUp fa fa-chevron-up"></div>
+          </div>
+        </div>
+        <ul class="item-group-appareils"></ul>
+      </div>
+
+      <div class="btnRed">
+        <div class="btn__Red">
+          <div class="ustensile">
+            <div class="ustensile__name">Ustensiles</div>
+            <div class="ustensile__iconDown">
+              <div id="iconDown" class="iconDown fa fa-chevron-down"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="btnRedOpen">
+        <div class="flexInputInconUp">
+          <input
+            class="selectSearch__ustensils"
+            type="text"
+            id="searchUstensils"
+            name="search"
+            placeholder="Rechercher un ustensils"
+            aria-label="Saisir ici un ustensils"
+            tabindex="2"
+          />
+
+          <div class="ustensile__iconUp">
+            <div id="iconUp" class="iconUp fa fa-chevron-up"></div>
+          </div>
+        </div>
+
+        <ul class="item-group-ustensils"></ul>
+      </div>
+    </nav>
 
     <!-- Grille Flexible -->
     <main id="recettes">
@@ -69,8 +165,13 @@
       <h2>Pied de page</h2>
     </div>
 
-    <!-- <script src="./js/index.js"></script> -->
     <!-- <script src="./js/index.js" type="module"></script> -->
+    <script src="./js/searchInput.js"></script>
     <script src="./js/recipes.js"></script>
+    <script src="./js/Recipe.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/displayButtonList.js"></script>
+    <script src="./js/dropDownList.js"></script>
+    <script src="./js/tags.js"></script>
   </body>
 </html>
