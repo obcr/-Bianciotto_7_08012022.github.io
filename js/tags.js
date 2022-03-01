@@ -1,5 +1,6 @@
-const tagCreateHtml = `<i id="crossTagsClose" class="far fa-times-circle"></i>`;
+let resultRecettes = [...recipes];
 
+const tagCreateHtml = `<i id="crossTagsClose" class="far fa-times-circle"></i>`;
 
 const displaytagsSelect = () => {
   const tagsZone = document.querySelector("#tags");
@@ -14,11 +15,11 @@ const displaytagsSelect = () => {
   );
   // console.log(tagsZone);
 
-  tagsZone.innerHTML = " ";
-
   itemTagsIngredients.forEach((tag) => {
     // console.log(tag);
     tag.addEventListener("click", (e) => {
+      console.log("click on ingredient:", e.target.innerHTML);
+      // console.log(tagsZone);
       let div = document.createElement("div");
       div.classList.add("tagsIngredient");
       div.setAttribute("tag", e.target.innerHTML);
@@ -26,90 +27,27 @@ const displaytagsSelect = () => {
       div.innerHTML += e.target.innerHTML + tagCreateHtml;
       tagsZone.appendChild(div);
 
-      const resultRecettes = recipes.filter((reponse) =>
+      console.log(resultRecettes);
+
+      resultRecettes = resultRecettes.filter((reponse) =>
         reponse.ingredients
           .map((element) => element.ingredient.toLowerCase())
           .includes(e.target.innerHTML.toLowerCase())
       );
 
-
-      // console.log(resultRecettes);
-
-      // displayButtonListIngredients(resultRecettes);
-      // displayButtonListAppareils(resultRecettes);
-      // displayButtonListUstensils(resultRecettes);
-
+      console.log("resultRecettes =", resultRecettes);
 
       displayRecipe(resultRecettes);
-
-
-      const crossTagsClose = document.querySelectorAll(".tagsIngredient");
-
-      crossTagsClose.forEach((tag) => {
-        // console.log(e.target.innerHTML);
-        // console.log(tag.getAttribute("tag"));
-        if (tag.getAttribute("tag")==e.target.innerHTML) {
-          // console.log("test install event", crossTagsClose);
-          tag.addEventListener("click", () => {
-            // console.log("test int event", crossTagsClose);
-            // Je remove le tag
-            div.remove();
-            // on recupere toutes les recettes par defaut
-            let recipesToDisplay = recipes
-            
-            // console.log(e.target);
-            
-            const searchNavBar = document.getElementById("searchNavBar");
-            
-            // 1 refaire recherche principale search input copier coller
-            if (searchNavBar.value.length>2){
-              console.log("Searchnavbartest");
-              recipesToDisplay = recipes.filter((reponse) =>
-              reponse.name.toLowerCase().includes(searchNavBar.value.toLowerCase())||
-              reponse.description.toLowerCase().includes(searchNavBar.value.toLowerCase())||
-              reponse.ingredients.map(element=>element.ingredient.toLowerCase()).includes(searchNavBar.value.toLowerCase())
-            );
-            }
-            console.log(recipesToDisplay);
-
-// 2 retouver recuperer list des tags qui sont affiche dans la zontags document>queryselectorall
-
-            const tagslist = document.querySelectorAll(".tagsIngredient");
-            console.log("tagslist", tagslist);
-      
-            tagslist.forEach((tag) => {
-              console.log(tag.getAttribute("tag"));
-              
-              recipesToDisplay = recipesToDisplay.filter((reponse) =>
-              reponse.ingredients
-                .map((element) => element.ingredient.toLowerCase())
-                .includes(tag.getAttribute("tag").toLowerCase())
-            );
-            console.log(recipesToDisplay);
-              // tag.addEventListener("click", (e) => {
-              //   console.log(e.target.innerHTML);
-              //           if (tag.getAttribute("tag") === e.target.innerHTML) {
-              //   console.log(tag);
-              // }
-              // });
-            });
-
-
-// 3 filtre les recettes suivant la list des tag dans la zone tags a voir filter const resultRecettes
-// 4 displayrecipes (recipesToDisplay)
-// 5 displayButtonListIngredients(recipesToDisplay);
-// 5 displayButtonListA(recipesToDisplay);
-// 5 displayButtonListU(recipesToDisplay);
-        });
-      }
-
-      });
+      displayList(resultRecettes);
+      console.log("resultRecettes =", resultRecettes);
     });
   });
 
   itemTagsAppareils.forEach((tag) => {
     // console.log(tag);
     tag.addEventListener("click", (e) => {
+      console.log("click on appareil:", e.target.innerHTML);
+      console.log(tagsZone);
       let div = document.createElement("div");
       div.classList.add("tagsAppareils");
       // console.log(e.target.innerHTML);
@@ -133,12 +71,15 @@ const displaytagsSelect = () => {
       });
       console.log(resultAppareils);
       displayRecipe(resultAppareils);
+      displayList(resultAppareils);
     });
   });
 
   itemTagsUstensils.forEach((tag) => {
     // console.log(tag);
     tag.addEventListener("click", (e) => {
+      console.log("click on ustensil:", e.target.innerHTML);
+      console.log(tagsZone);
       let div = document.createElement("div");
       div.classList.add("tagsUstensils");
       // console.log(e.target.innerHTML);
@@ -152,8 +93,198 @@ const displaytagsSelect = () => {
       );
       console.log(resultUstensils);
       displayRecipe(resultUstensils);
+      displayList(resultUstensils);
     });
   });
 };
 
 displaytagsSelect();
+
+function displayList() {
+  displayButtonListIngredients(resultRecettes);
+  displayButtonListAppareils(resultRecettes);
+  displayButtonListUstensils(resultRecettes);
+
+  displaytagsSelect();
+
+  const crossTagsIngredientClose = document.querySelectorAll(".tagsIngredient");
+  const crossTagsAppareilsClose = document.querySelectorAll(".tagsAppareils");
+  const crossTagsUstensilsClose = document.querySelectorAll(".tagsUstensils");
+
+  crossTagsIngredientClose.forEach((tag) => {
+    // console.log("test install event", crossTagsIngredientClose);
+    tag.addEventListener("click", () => {
+      console.log("test int event", tag);
+      // Je remove le tag
+      tag.remove();
+      // on recupere toutes les recettes par defaut
+      let recipesToDisplay = recipes;
+
+      // console.log(e.target);
+
+      const searchNavBar = document.getElementById("searchNavBar");
+
+      // 1 refaire recherche principale search input copier coller
+      if (searchNavBar.value.length > 2) {
+        console.log("Searchnavbartest");
+        recipesToDisplay = recipes.filter(
+          (reponse) =>
+            reponse.name
+              .toLowerCase()
+              .includes(searchNavBar.value.toLowerCase()) ||
+            reponse.description
+              .toLowerCase()
+              .includes(searchNavBar.value.toLowerCase()) ||
+            reponse.ingredients
+              .map((element) => element.ingredient.toLowerCase())
+              .includes(searchNavBar.value.toLowerCase())
+        );
+      }
+      // affiche a nouveau les recettes
+      // console.log(recipesToDisplay);
+
+      // 2 retouver recuperer list des tags qui sont affiche dans la zontags documentQuerySelectorAll
+
+      const tagslistIngredients = document.querySelectorAll(".tagsIngredient");
+      // console.log("tagslistIngredients", tagslistIngredients);
+
+      tagslistIngredients.forEach((tag) => {
+        // console.log(tag);
+        recipesToDisplay = recipesToDisplay.filter((reponse) =>
+          reponse.ingredients
+            .map((element) => element.ingredient.toLowerCase())
+            .includes(tag.getAttribute("tag").toLowerCase())
+        );
+      });
+
+      resultRecettes = [...recipesToDisplay];
+
+      console.log("resultRecettes =", resultRecettes);
+      console.log("recipeToDisplay =", recipesToDisplay);
+
+      displayRecipe(recipesToDisplay);
+
+      displayButtonListIngredients(recipesToDisplay);
+      displayButtonListAppareils(recipesToDisplay);
+      displayButtonListUstensils(recipesToDisplay);
+
+      displaytagsSelect();
+    });
+  });
+  crossTagsAppareilsClose.forEach((tag) => {
+    tag.addEventListener("click", () => {
+      console.log("test int event", tag);
+      // Je remove le tag
+      tag.remove();
+      // on recupere toutes les recettes par defaut
+      let recipesToDisplay = recipes;
+
+      // console.log(e.target);
+
+      const searchNavBar = document.getElementById("searchNavBar");
+
+      // 1 refaire recherche principale search input copier coller
+      if (searchNavBar.value.length > 2) {
+        console.log("Searchnavbartest");
+        recipesToDisplay = recipes.filter(
+          (reponse) =>
+            reponse.name
+              .toLowerCase()
+              .includes(searchNavBar.value.toLowerCase()) ||
+            reponse.description
+              .toLowerCase()
+              .includes(searchNavBar.value.toLowerCase()) ||
+            reponse.ingredients
+              .map((element) => element.ingredient.toLowerCase())
+              .includes(searchNavBar.value.toLowerCase())
+        );
+      }
+      // affiche a nouveau les recettes
+      console.log(recipesToDisplay);
+      displayRecipe(recipesToDisplay);
+
+      // 2 retouver recuperer list des tags qui sont affiche dans la zontags document>queryselectorall
+
+      const tagslistAppareils = document.querySelectorAll(".tagsAppareils");
+      console.log("tagslistAppareils", tagslistAppareils);
+
+      tagslistAppareils.forEach((tag) => {
+        console.log(tag.getAttribute("tag"));
+
+        recipesToDisplay = recipesToDisplay.filter((reponse) =>
+          reponse.ingredients
+            .map((element) => element.ingredient.toLowerCase())
+            .includes(tag.getAttribute("tag").toLowerCase())
+        );
+        console.log(recipesToDisplay);
+      });
+
+      displayRecipe(recipesToDisplay);
+
+      displayButtonListIngredients(recipesToDisplay);
+      displayButtonListAppareils(recipesToDisplay);
+      displayButtonListUstensils(recipesToDisplay);
+
+      displaytagsSelect();
+    });
+    //}
+  });
+  crossTagsUstensilsClose.forEach((tag) => {
+    tag.addEventListener("click", () => {
+      console.log("test int event", tag);
+      // Je remove le tag
+      tag.remove();
+      // on recupere toutes les recettes par defaut
+      let recipesToDisplay = recipes;
+
+      // console.log(e.target);
+
+      const searchNavBar = document.getElementById("searchNavBar");
+
+      // 1 refaire recherche principale search input copier coller
+      if (searchNavBar.value.length > 2) {
+        console.log("Searchnavbartest");
+        recipesToDisplay = recipes.filter(
+          (reponse) =>
+            reponse.name
+              .toLowerCase()
+              .includes(searchNavBar.value.toLowerCase()) ||
+            reponse.description
+              .toLowerCase()
+              .includes(searchNavBar.value.toLowerCase()) ||
+            reponse.ingredients
+              .map((element) => element.ingredient.toLowerCase())
+              .includes(searchNavBar.value.toLowerCase())
+        );
+      }
+      // affiche a nouveau les recettes
+      console.log(recipesToDisplay);
+      displayRecipe(recipesToDisplay);
+
+      // 2 retouver recuperer list des tags qui sont affiche dans la zontags document>queryselectorall
+
+      const tagslistUstensils = document.querySelectorAll(".tagsUstensils");
+      console.log("tagslistUstensils", tagslistUstensils);
+
+      tagslistUstensils.forEach((tag) => {
+        console.log(tag.getAttribute("tag"));
+
+        recipesToDisplay = recipesToDisplay.filter((reponse) =>
+          reponse.ingredients
+            .map((element) => element.ingredient.toLowerCase())
+            .includes(tag.getAttribute("tag").toLowerCase())
+        );
+        console.log(recipesToDisplay);
+      });
+
+      displayRecipe(recipesToDisplay);
+
+      displayButtonListIngredients(recipesToDisplay);
+      displayButtonListAppareils(recipesToDisplay);
+      displayButtonListUstensils(recipesToDisplay);
+
+      displaytagsSelect();
+    });
+    //}
+  });
+}
