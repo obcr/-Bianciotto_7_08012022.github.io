@@ -1,63 +1,20 @@
 const searchNavBar = document.getElementById("searchNavBar");
-// console.log("resulSearchBar avant", resultSearchBar);
 
-// Ecouteur d evenement de recherche dans input avec resultat par apport au tri de l objet recipes
+//   Ecouteur d evenement de recherche dans input avec resultat par apport au tri de l objet recipes
 searchNavBar.addEventListener("keyup", (e) => {
   const input = searchNavBar.value;
   console.log(recipes);
   console.log(input);
   console.log(e.target.value.length);
-  let result = [];
-
   if (e.target.value.length > 2) {
-    for (let i = 0; i < recipes.length; i++) {
-      console.log(recipes[i]);
-      console.log(recipes[i].ingredients);
-
-      const includeName = recipes[i].name
-        .toLowerCase()
-        .includes(input.toLowerCase());
-      const includeDescription = recipes[i].description
-        .toLowerCase()
-        .includes(input.toLowerCase());
-      let includesIngredient = false;
-
-      for (let j = 0; j < recipes[i].ingredients.length; j++) {
-        console.log(recipes[i].ingredients[j].ingredient);
-        if (
-          recipes[i].ingredients[j].ingredient
-            .toLowerCase()
-            .includes(input.toLowerCase())
-        ) {
-          includesIngredient = true;
-        }
-      }
-
-      if (includeName || includeDescription || includesIngredient) {
-        result.push(recipes[i]);
-      }
-
-      // if (recipes[i].name.toLowerCase().includes(input.toLowerCase()) == true) {
-      //   result.push(recipes[i]);
-      // }
-      // if (
-      //   recipes[i].description.toLowerCase().includes(input.toLowerCase()) ==
-      //   true
-      // ) {
-      //   result.push(recipes[i]);
-      // }
-    }
-    console.log(result);
-
-    // const result = recipes.filter(
-    //   (laRecette) =>
-    //     laRecette.name.toLowerCase().includes(input.toLowerCase()) ||
-    //     laRecette.description.toLowerCase().includes(input.toLowerCase()) ||
-    //     laRecette.ingredients
-    //       .map((element) => element.ingredient.toLowerCase())
-    //       .includes(input.toLowerCase())
-    // );
-
+    const result = recipes.filter(
+      (reponse) =>
+        reponse.name.toLowerCase().includes(input.toLowerCase()) ||
+        reponse.description.toLowerCase().includes(input.toLowerCase()) ||
+        reponse.ingredients
+          .map((element) => element.ingredient.toLowerCase())
+          .includes(input.toLowerCase())
+    );
     displayRecipe(result);
     console.log(result);
   }
