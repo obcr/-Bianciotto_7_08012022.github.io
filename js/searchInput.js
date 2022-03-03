@@ -17,7 +17,12 @@ searchNavBar.addEventListener("keyup", (e) => {
     );
     displayRecipe(result);
     console.log(result);
-  }
+    if (result.length == 0) {
+      const alertMessage = document.getElementById("recettes");
+      console.log("alert", alertMessage);
+      alertMessage.innerHTML = "ALERT";
+    }
+  } else displayRecipe(recipes);
   //   result est egale au resultat LowerCase 'dans recipes' filtré lettres indiquées dans input
 });
 
