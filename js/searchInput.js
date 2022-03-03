@@ -36,27 +36,14 @@ searchNavBar.addEventListener("keyup", (e) => {
       if (includeName || includeDescription || includesIngredient) {
         result.push(recipes[i]);
       }
-
-      // if (recipes[i].name.toLowerCase().includes(input.toLowerCase()) == true) {
-      //   result.push(recipes[i]);
-      // }
-      // if (
-      //   recipes[i].description.toLowerCase().includes(input.toLowerCase()) ==
-      //   true
-      // ) {
-      //   result.push(recipes[i]);
-      // }
     }
-    console.log(result);
 
-    // const result = recipes.filter(
-    //   (laRecette) =>
-    //     laRecette.name.toLowerCase().includes(input.toLowerCase()) ||
-    //     laRecette.description.toLowerCase().includes(input.toLowerCase()) ||
-    //     laRecette.ingredients
-    //       .map((element) => element.ingredient.toLowerCase())
-    //       .includes(input.toLowerCase())
-    // );
+    // if (result.length == 0) {
+    //   const alertMessage = document.getElementById("recettes");
+    //   console.log("alert", alertMessage);
+    //   alertMessage.innerHTML = "ALERT";
+    // }
+    // // } else displayRecipe(recipes);
 
     displayRecipe(result);
     console.log(result);
