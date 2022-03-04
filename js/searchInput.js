@@ -38,14 +38,18 @@ searchNavBar.addEventListener("keyup", (e) => {
       }
     }
 
+    if (result.length == 0) {
+      const alertMessage = document.getElementById("recettes");
+      console.log("alert", alertMessage);
+      alertMessage.innerHTML = "ALERT";
+    }
     // if (result.length == 0) {
     //   const alertMessage = document.getElementById("recettes");
     //   console.log("alert", alertMessage);
     //   alertMessage.innerHTML = "ALERT";
     // }
     // // } else displayRecipe(recipes);
-
-    displayRecipe(result);
+    else displayRecipe(result);
     console.log(result);
   }
   //   result est egale au resultat LowerCase 'dans recipes' filtré lettres indiquées dans input
