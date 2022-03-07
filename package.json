@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/obcr/Bianciotto_7_08012022/issues"
   },
-  "homepage": "https://github.com/obcr/Bianciotto_7_08012022#readme"
+  "homepage": "https://github.com/obcr/Bianciotto_7_08012022#readme",
+  "dependencies": {}
 }

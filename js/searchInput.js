@@ -20,11 +20,19 @@ searchNavBar.addEventListener("keyup", (e) => {
     if (result.length == 0) {
       const alertMessage = document.getElementById("recettes");
       console.log("alert", alertMessage);
-      alertMessage.innerHTML = "ALERT";
+      alertMessage.innerHTML = `<div class="cards__no-recipes">
+        <p class="cards__no-recipes-text">Aucune recette ne correspond à votre critère… </p>
+      </div>`;
     }
   } else displayRecipe(recipes);
   //   result est egale au resultat LowerCase 'dans recipes' filtré lettres indiquées dans input
 });
+
+// return alertMessage.innerHTML(
+//   `<div class="cards__no-recipes">
+//   <p class="cards__no-recipes-text">Aucune recette ne correspond à votre critère… </p>
+// </div>`
+// );
 
 const searchIngredients = document.getElementById("searchIngredients");
 

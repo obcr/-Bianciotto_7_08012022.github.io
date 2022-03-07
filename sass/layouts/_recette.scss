@@ -3,7 +3,7 @@
   margin-top: 1.5rem;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   grid-gap: 50px;
 }
 
@@ -128,4 +128,3 @@
     display: -webkit-box;
   }
 }
-
