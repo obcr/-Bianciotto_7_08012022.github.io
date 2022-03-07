@@ -15,8 +15,11 @@ searchNavBar.addEventListener("keyup", (e) => {
           .map((element) => element.ingredient.toLowerCase())
           .includes(input.toLowerCase())
     );
-    displayRecipe(result);
+    resultRecettes = [...result];
     console.log(result);
+    displayRecipe(result);
+    displayList();
+
     if (result.length == 0) {
       const alertMessage = document.getElementById("recettes");
       console.log("alert", alertMessage);
@@ -24,7 +27,13 @@ searchNavBar.addEventListener("keyup", (e) => {
         <p class="cards__no-recipes-text">Aucune recette ne correspond à votre critère… </p>
       </div>`;
     }
-  } else displayRecipe(recipes);
+  } else {
+    resultRecettes = [...recipes];
+    console.log(resultRecettes);
+    displayRecipe(recipes);
+    displayList();
+  }
+
   //   result est egale au resultat LowerCase 'dans recipes' filtré lettres indiquées dans input
 });
 
