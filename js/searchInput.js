@@ -44,9 +44,18 @@ searchNavBar.addEventListener("keyup", (e) => {
       alertMessage.innerHTML = `<div class="cards__no-recipes">
         <p class="cards__no-recipes-text">Aucune recette ne correspond à votre critère… </p>
       </div>`;
-    } else displayRecipe(result);
-    console.log(result);
-  } else displayRecipe(recipes);
+    } else {
+      resultRecettes = [...result];
+      console.log(result);
+      displayRecipe(result);
+      displayList();
+    }
+  } else {
+    resultRecettes = [...recipes];
+    console.log(resultRecettes);
+    displayRecipe(recipes);
+    displayList();
+  }
   //   result est egale au resultat LowerCase 'dans recipes' filtré lettres indiquées dans input
 });
 
