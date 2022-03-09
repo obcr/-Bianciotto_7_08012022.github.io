@@ -30,11 +30,11 @@ class Recipe {
                   (element) => {
                     // `<li class="ingredientRecette__produits">#${element}</li>`
                     console.log(element.ingredient);
-                    return `<div class="ingredientRecette">
-                    <li class="ingredientRecette__produits">${element.ingredient}</li>
-                    <li class="ingredientRecette__quantity">${element.quantity}</li>
-                    <li class="ingredientRecette__unit">${element.unit}</li>
-                    </div>`;
+                    return `
+                    <div class="ingredientRecette">
+                    <li class="ingredientRecette__produits"><strong>${element.ingredient}</strong> ${quantityContent} ${unitContent}</li>
+                    </div>
+                    `
                   }
                   // `<li class="ingredientRecette__produits">#${element}</li>`
                 )

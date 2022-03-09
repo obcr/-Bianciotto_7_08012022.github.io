@@ -236,7 +236,7 @@ body {
   white-space: nowrap;
   overflow: hidden; }
   .ingredientRecette__produits {
-    font-weight: 900; }
+    font-weight: 400; }
   .ingredientRecette__quantity {
     font-weight: 400; }
   .ingredientRecette__unit {
