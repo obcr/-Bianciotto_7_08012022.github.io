@@ -32,14 +32,12 @@ class Recipe {
                     
                     // console.log(element.ingredient);
                     
-                    let quantityContent = element.quantity ? ' : ' + element.quantity : ''
-                    let unitContent = element.unit ? element.unit : ''
+                    let quantityContent = element.quantity ? ' : ' + element.quantity : ' '
+                    let unitContent = element.unit ? element.unit : ' '
 
                     return `
                     <div class="ingredientRecette">
-                    <li class="ingredientRecette__produits">${element.ingredient}</li>
-                    <li class="ingredientRecette__quantity">${quantityContent}</li>
-                    <li class="ingredientRecette__unit">${unitContent}</li>
+                    <li class="ingredientRecette__produits"><strong>${element.ingredient}</strong> ${quantityContent} ${unitContent}</li>
                     </div>
                     `
                   })
