@@ -114,7 +114,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-bottom: 20px; }
   .navbarSearch > input {
     border-color: transparent;
     background-color: transparent;
