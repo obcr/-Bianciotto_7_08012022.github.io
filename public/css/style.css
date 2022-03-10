@@ -197,7 +197,10 @@ body {
   margin-bottom: 5px; }
   .blocElementsHigh h2 {
     font-weight: 400;
-    font-size: 18px; }
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
 
 .time {
   display: flex;
