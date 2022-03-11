@@ -326,8 +326,8 @@ body {
 .flexInputInconUp {
   display: flex; }
 
-#iconDow,
-#iconUp {
+#iconDownIng, #iconDownUst, #iconDownApp
+#iconUpIng, #iconUpUst, #iconUpApp {
   cursor: pointer;
   font-size: larger; }
 
