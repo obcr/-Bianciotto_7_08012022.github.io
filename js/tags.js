@@ -21,7 +21,7 @@ const displaytagsSelect = () => {
       console.log("click on ingredient:", e.target.innerHTML);
       // console.log(tagsZone);
       let div = document.createElement("div");
-      div.classList.add("tagsIngredient");
+      div.classList.add("tagsIngredient", "tagSelector");
       div.setAttribute("tag", e.target.innerHTML);
       // console.log(e.target.innerHTML);
       div.innerHTML += e.target.innerHTML + tagCreateHtml;
@@ -49,7 +49,8 @@ const displaytagsSelect = () => {
       console.log("click on appareil:", e.target.innerHTML);
       console.log(tagsZone);
       let div = document.createElement("div");
-      div.classList.add("tagsAppareils");
+      div.classList.add("tagsAppareils", "tagSelector");
+      div.setAttribute("tag", e.target.innerHTML);
       // console.log(e.target.innerHTML);
       div.innerHTML += e.target.innerHTML + tagCreateHtml;
       tagsZone.appendChild(div);
@@ -81,7 +82,8 @@ const displaytagsSelect = () => {
       console.log("click on ustensil:", e.target.innerHTML);
       console.log(tagsZone);
       let div = document.createElement("div");
-      div.classList.add("tagsUstensils");
+      div.classList.add("tagsUstensils", "tagSelector");
+      div.setAttribute("tag", e.target.innerHTML);
       // console.log(e.target.innerHTML);
       div.innerHTML += e.target.innerHTML + tagCreateHtml;
       tagsZone.appendChild(div);
@@ -145,11 +147,11 @@ function displayList() {
 
       // 2 retouver recuperer list des tags qui sont affiche dans la zontags documentQuerySelectorAll
 
-      const tagslistIngredients = document.querySelectorAll(".tagsIngredient");
+      const tagslistIngredients = document.querySelectorAll(".tagSelector");
       // console.log("tagslistIngredients", tagslistIngredients);
 
       tagslistIngredients.forEach((tag) => {
-        // console.log(tag);
+        console.log(tag);
         recipesToDisplay = recipesToDisplay.filter((reponse) =>
           reponse.ingredients
             .map((element) => element.ingredient.toLowerCase())
@@ -171,6 +173,7 @@ function displayList() {
       displaytagsSelect();
     });
   });
+  
   crossTagsAppareilsClose.forEach((tag) => {
     tag.addEventListener("click", () => {
       console.log("test int event", tag);
@@ -201,21 +204,42 @@ function displayList() {
       }
       // affiche a nouveau les recettes
       console.log(recipesToDisplay);
-      displayRecipe(recipesToDisplay);
+      // displayRecipe(recipesToDisplay);
 
       // 2 retouver recuperer list des tags qui sont affiche dans la zontags document>queryselectorall
 
-      const tagslistAppareils = document.querySelectorAll(".tagsAppareils");
+      const tagslistAppareils = document.querySelectorAll(".tagSelector");
       console.log("tagslistAppareils", tagslistAppareils);
 
       tagslistAppareils.forEach((tag) => {
-        console.log(tag.getAttribute("tag"));
+        console.log("taggetAttibut =", tag.getAttribute("tag"));
+        console.log("tagsIngredient =", tag.classList.contains("tagsIngredient"));
+        console.log("tagsAppareils =", tag.classList.contains("tagsAppareils"));
+        console.log("tagsUstensils =", tag.classList.contains("tagsUstensils"));
 
-        recipesToDisplay = recipesToDisplay.filter((reponse) =>
-          reponse.ingredients
-            .map((element) => element.ingredient.toLowerCase())
-            .includes(tag.getAttribute("tag").toLowerCase())
-        );
+if (tag.classList.contains("tagsIngredient")){
+  recipesToDisplay = recipesToDisplay.filter((reponse) =>
+  reponse.ingredients
+    .map((element) => element.ingredient.toLowerCase())
+    .includes(tag.getAttribute("tag").toLowerCase())
+);
+}
+if (tag.classList.contains("tagsAppareils")){
+  recipesToDisplay = recipesToDisplay.filter((reponse) =>
+  reponse.appliance
+  .toLowerCase()
+  .includes(tag.getAttribute("tag").toLowerCase())
+);
+}
+if (tag.classList.contains("tagsUstensils")){
+  recipesToDisplay = recipesToDisplay.filter((reponse) =>
+  reponse.ustensils
+  .map((element) => element.toLowerCase())
+  .includes(tag.getAttribute("tag").toLowerCase())
+);
+}
+
+
         console.log(recipesToDisplay);
       });
 
@@ -229,6 +253,7 @@ function displayList() {
     });
     //}
   });
+
   crossTagsUstensilsClose.forEach((tag) => {
     tag.addEventListener("click", () => {
       console.log("test int event", tag);
@@ -267,13 +292,32 @@ function displayList() {
       console.log("tagslistUstensils", tagslistUstensils);
 
       tagslistUstensils.forEach((tag) => {
-        console.log(tag.getAttribute("tag"));
+        console.log("taggetAttibut =", tag.getAttribute("tag"));
+        console.log("tagsIngredient =", tag.classList.contains("tagsIngredient"));
+        console.log("tagsAppareils =", tag.classList.contains("tagsAppareils"));
+        console.log("tagsUstensils =", tag.classList.contains("tagsUstensils"));
 
-        recipesToDisplay = recipesToDisplay.filter((reponse) =>
-          reponse.ingredients
-            .map((element) => element.ingredient.toLowerCase())
-            .includes(tag.getAttribute("tag").toLowerCase())
-        );
+if (tag.classList.contains("tagsIngredient")){
+  recipesToDisplay = recipesToDisplay.filter((reponse) =>
+  reponse.ingredients
+    .map((element) => element.ingredient.toLowerCase())
+    .includes(tag.getAttribute("tag").toLowerCase())
+);
+}
+if (tag.classList.contains("tagsAppareils")){
+  recipesToDisplay = recipesToDisplay.filter((reponse) =>
+  reponse.appliance
+  .toLowerCase()
+  .includes(tag.getAttribute("tag").toLowerCase())
+);
+}
+if (tag.classList.contains("tagsUstensils")){
+  recipesToDisplay = recipesToDisplay.filter((reponse) =>
+  reponse.ustensils
+  .map((element) => element.toLowerCase())
+  .includes(tag.getAttribute("tag").toLowerCase())
+);
+}
         console.log(recipesToDisplay);
       });
 
@@ -288,3 +332,4 @@ function displayList() {
     //}
   });
 }
+
