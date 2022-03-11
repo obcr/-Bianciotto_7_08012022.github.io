@@ -150,7 +150,8 @@ body {
 #tags {
   display: flex;
   margin: auto;
-  width: 100%; }
+  width: 100%;
+  font-family: "Lato", sans-serif; }
 
 .tags > span {
   height: 65px; }
@@ -234,6 +235,7 @@ body {
   border-radius: 0.5rem;
   cursor: initial; }
   .btnBlueOpen .selectSearch__ingredients {
+    color: white;
     border-color: transparent;
     background-color: transparent;
     outline: none;
@@ -269,6 +271,7 @@ body {
   border-radius: 0.5rem;
   cursor: initial; }
   .btnGreenOpen .selectSearch__appareils {
+    color: white;
     border-color: transparent;
     background-color: transparent;
     outline: none;
@@ -303,6 +306,7 @@ body {
   border-radius: 0.5rem;
   cursor: initial; }
   .btnRedOpen .selectSearch__ustensils {
+    color: white;
     border-color: transparent;
     background-color: transparent;
     outline: none;
@@ -325,8 +329,11 @@ body {
 .flexInputInconUp {
   display: flex; }
 
-#iconDownIng, #iconDownUst, #iconDownApp
-#iconUpIng, #iconUpUst, #iconUpApp {
+#iconDownIng,
+#iconDownUst,
+#iconDownApp #iconUpIng,
+#iconUpUst,
+#iconUpApp {
   cursor: pointer;
   font-size: larger; }
 
