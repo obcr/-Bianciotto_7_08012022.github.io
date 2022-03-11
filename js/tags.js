@@ -54,7 +54,7 @@ const displaytagsSelect = () => {
       div.innerHTML += e.target.innerHTML + tagCreateHtml;
       tagsZone.appendChild(div);
 
-      const resultAppareils = recipes.filter((reponse) => {
+      const resultAppareils = resultRecettes.filter((reponse) => {
         // console.log(reponse);
         console.log("Appareil actuel ", reponse.appliance);
         // console.log(reponse);
@@ -86,7 +86,7 @@ const displaytagsSelect = () => {
       div.innerHTML += e.target.innerHTML + tagCreateHtml;
       tagsZone.appendChild(div);
 
-      const resultUstensils = recipes.filter((reponse) =>
+      const resultUstensils = resultRecettes.filter((reponse) =>
         reponse.ustensils
           .map((element) => element.toLowerCase())
           .includes(e.target.innerHTML.toLowerCase())
