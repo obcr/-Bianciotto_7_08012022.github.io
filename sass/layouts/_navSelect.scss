@@ -45,6 +45,7 @@
   border-radius: 0.5rem;
   cursor: initial;
   .selectSearch__ingredients {
+    color: white;
     border-color: transparent;
     background-color: transparent;
     outline: none;
@@ -87,6 +88,7 @@
   border-radius: 0.5rem;
   cursor: initial;
   .selectSearch__appareils {
+    color: white;
     border-color: transparent;
     background-color: transparent;
     outline: none;
@@ -129,6 +131,7 @@
   border-radius: 0.5rem;
   cursor: initial;
   .selectSearch__ustensils {
+    color: white;
     border-color: transparent;
     background-color: transparent;
     outline: none;
@@ -157,8 +160,11 @@
   display: flex;
 }
 
-#iconDownIng,#iconDownUst,#iconDownApp
-#iconUpIng,#iconUpUst,#iconUpApp {
+#iconDownIng,
+#iconDownUst,
+#iconDownApp #iconUpIng,
+#iconUpUst,
+#iconUpApp {
   cursor: pointer;
   font-size: larger;
 }
